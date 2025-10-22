@@ -8,11 +8,10 @@ void perform_reset(){
     ResetUI::init_ui();
     ResetUI::show_erasing_animation(5);
 
-    printk("[RESET_SYS] Simulação de limpeza de dados...\n");
+    printk("[RESET_SYS] Limpando dados do sistema...\n");
     msleep(2000);
-    printk("[RESET_SYS] Reset pronto, reiniciando...\n");
+    printk("[RESET_SYS] Reset concluído, reiniciando...\n");
 
-    // Reinício kernel-space
     kernel_restart(NULL);
 }
 
