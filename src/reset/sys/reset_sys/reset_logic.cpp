@@ -1,18 +1,19 @@
 #include "reset_ui.h"
-#include <thread>
-#include <chrono>
+#include <linux/kernel.h>
+#include <linux/delay.h>
 
 namespace ResetLogic {
 
-    // Simula apagamento seguro dos dados
-    void perform_reset() {
-        ResetUI::init_ui();
-        ResetUI::show_erasing_animation(5); // 5 segundos de animação
+void perform_reset() {
+    ResetUI::init_ui();
+    ResetUI::show_erasing_animation(5); // 5 segundos animados
 
-        // Simulação de "apagar dados"
-        std::cout << "[RESET_SYS] Cleaning partitions..." << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(2));
-        std::cout << "[RESET_SYS] Reset completed. System will restart." << std::endl;
-    }
+    printk("[RESET_SYS] Apagando dados do sistema...\n");
+    msleep(2000); // simulação de limpeza
+    printk("[RESET_SYS] Reset concluído, reiniciando...\n");
+
+    // Reinicia o sistema via kernel
+    kernel_restart(NULL);
+}
 
 } // namespace ResetLogic
