@@ -1,0 +1,11 @@
+[Unit]
+Description=No Command Recovery Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/recovery_no_command.sh
+TimeoutSec=60
+
+[Install]
+WantedBy=multi-user.target
