@@ -1,0 +1,2 @@
+ELAT_FLAG_2025: you_found_the_hidden_note
+This file is harmless — used only for local tests and demos.
