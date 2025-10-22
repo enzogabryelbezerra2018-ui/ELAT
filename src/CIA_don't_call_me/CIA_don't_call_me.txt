@@ -1,0 +1,21 @@
+***********************************************
+*           CIA - DON'T CALL ME               *
+***********************************************
+
+Este arquivo é um placeholder para referência interna
+do projeto ELAT e suas distribuições.
+
+Aviso: NÃO LIGUE, NÃO CONTACTE, NÃO INTERAJA.
+
+Uso:
+- Documentação interna do kernel ELAT
+- Registro de easter eggs ou notas do projeto
+- Arquivo de identificação de módulos experimentais
+
+Notas:
+1. Este arquivo não afeta a execução do kernel.
+2. Pode ser atualizado ou removido conforme necessário.
+3. Nome “CIA_don't_call_me” é apenas simbólico e
+   não tem relação com agências reais.
+
+***********************************************
