@@ -1,17 +1,17 @@
 #ifndef RESET_UI_H
 #define RESET_UI_H
 
-#include <string>
+#include <linux/types.h>
 
 namespace ResetUI {
 
-    // Inicializa a UI do reset
+    // Inicializa framebuffer (kernel-space)
     void init_ui();
 
-    // Mostra o texto "ERASING" com os 3 pontinhos animados
+    // Mostra o texto "ERASING" com animação dos 3 pontinhos
     void show_erasing_animation(int duration_sec);
 
-    // Limpa a tela / framebuffer (ou terminal)
+    // Limpa framebuffer
     void clear_ui();
 
 } // namespace ResetUI
