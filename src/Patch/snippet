@@ -1,0 +1,20 @@
+// kernel/panic.c   — trecho de exemplo
+#include "reset_sys.h"   // include do header publicado
+
+extern void start_reset_sys(void); // se preferir extern
+
+void elat_panic_handler(const char *reason)
+{
+    printk("\n[ELAT PANIC] Kernel detectou falha crítica: %s\n", reason ? reason : "unknown");
+    msleep(500);
+
+    /* chama o menu/panic UI (texto), então se quiser ir direto pro reset, chame */
+    // elat_menu_mode_start();  // se estiver usando menu mode antes
+
+    /* se a política da distro pedir reset automático, chama start_reset_sys */
+    pr_emerg("[ELAT PANIC] Chamando start_reset_sys() para processo controlado de reset\n");
+    start_reset_sys();
+
+    /* se start_reset_sys retornar (não deveria), tente reboot de emergência */
+    emergency_restart();
+}
