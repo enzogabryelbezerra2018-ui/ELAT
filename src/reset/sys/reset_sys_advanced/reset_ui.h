@@ -6,8 +6,9 @@
 namespace ResetUI {
 
     void init_ui();
-    void show_erasing_animation(int duration_sec);
     void clear_ui();
+    void draw_text_centered(const char* str, int y, uint32_t color);
+    void show_erasing_animation(int duration_sec);
 
 } // namespace ResetUI
 
