@@ -1,0 +1,7 @@
+CHECKLIST – Testes (ambiente de desenvolvimento)
+1) Testar kernel_handler em QEMU: forçar chamada elat_no_command_error_handler("test").
+2) Validar que sync_filesystems() funciona e que dmesg mostra flush.
+3) Testar remount read-only em diferentes setups: ext4, overlayfs, initramfs.
+4) Testar recovery.sh em chroot/container antes de usar no host.
+5) Garantir que backups/ snapshots existem antes de rodar testes em sistemas reais.
+6) Verificar logs via serial/uart para capturar o estado pré-restart.
